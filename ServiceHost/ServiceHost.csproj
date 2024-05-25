@@ -7,6 +7,7 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <RootNamespace>TedOliviaAccomplishmentsApi.ServiceHost</RootNamespace>
         <UserSecretsId>4ea39777-924c-4526-91f6-7e4b30872e81</UserSecretsId>
+        <IncludeHttpRuleProtos>true</IncludeHttpRuleProtos>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,6 +16,8 @@
 
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="8.0.5" />
+        <PackageReference Include="Microsoft.AspNetCore.Grpc.Swagger" Version="0.8.5" />
     </ItemGroup>
 
     <ItemGroup>

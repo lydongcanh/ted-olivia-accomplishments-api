@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using TedOliviaAccomplishmentsApi.ServiceHost.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,15 +14,32 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 
 // Add services to the container.
-builder.Services.AddGrpc();
+builder.Services.AddGrpc().AddJsonTranscoding();
+builder.Services.AddGrpcSwagger();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "ted-olivia-accomplishments-api",
+        Description = "Backend service for the 'Olivia & Ted Accomplishments' site",
+        Version = "v1"
+    });
+});
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.UseSwagger();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    });
 }
 else
 {
