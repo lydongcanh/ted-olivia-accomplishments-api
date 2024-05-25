@@ -10,13 +10,6 @@ builder.WebHost.ConfigureKestrel(options =>
     {
         listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2;
     });
-
-    // Listen on port 7276 for HTTPS
-    options.ListenAnyIP(7276, listenOptions =>
-    {
-        listenOptions.UseHttps();
-        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2;
-    });
 });
 
 // Add services to the container.
@@ -29,6 +22,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+}
+else
+{
+    // Redirect HTTP to HTTPS
+    app.UseHttpsRedirection();
 }
 
 app.UseRouting();

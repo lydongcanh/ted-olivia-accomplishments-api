@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <RootNamespace>TedOliviaAccomplishmentsApi.ServiceHost</RootNamespace>
+        <UserSecretsId>4ea39777-924c-4526-91f6-7e4b30872e81</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
