@@ -5,8 +5,8 @@ namespace TedOliviaAccomplishmentsApi.ServiceHost.Controllers;
 [ApiController]
 public class HealthCheckController : ControllerBase
 {
-    [HttpGet("api/v1/heathz")]
-    public IActionResult Heathz()
+    [HttpGet("api/v1/healthz")]
+    public IActionResult Healthz()
     {
         return Ok();
     }
