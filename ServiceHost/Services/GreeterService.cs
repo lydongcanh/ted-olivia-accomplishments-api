@@ -1,7 +1,7 @@
 using Grpc.Core;
 using ted_olivia_accomplishments_api;
 
-namespace ted_olivia_accomplishments_api.Services;
+namespace TedOliviaAccomplishmentsApi.ServiceHost.Services;
 
 public class GreeterService : Greeter.GreeterBase
 {

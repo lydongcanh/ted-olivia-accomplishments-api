@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ted-olivia-accomplishments-api", "ted-olivia-accomplishments-api\ted-olivia-accomplishments-api.csproj", "{8982D35B-536A-4DA7-A85B-84F39F4A3B00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{8982D35B-536A-4DA7-A85B-84F39F4A3B00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
