@@ -5,7 +5,7 @@ namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 public class SqlLiteDbContext : DbContext
 {
     // Define the path relative to the application's root directory
-    private static readonly string DbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "sqlite.db");
+    public static readonly string DbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "sqlite.db");
 
     // Ensure the Data directory is created if it doesn't exist
     static SqlLiteDbContext()

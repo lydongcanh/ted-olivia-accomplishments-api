@@ -1,4 +1,6 @@
+using Hangfire;
 using Microsoft.OpenApi.Models;
+using TedOliviaAccomplishmentsApi.Core.Infrastructure.Hangfire;
 using TedOliviaAccomplishmentsApi.ServiceHost.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +27,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 });
+builder.Services.AddHangFire();
 
 builder.Services.AddControllers();
 
@@ -35,6 +38,7 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
 });
+app.MapHangfireDashboard();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
