@@ -1,7 +1,6 @@
 using Hangfire;
 using Hangfire.Storage.SQLite;
 using Microsoft.Extensions.DependencyInjection;
-using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 
 namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Hangfire;
 
@@ -14,7 +13,7 @@ public static class ServiceExtensions
         services.AddHangfire(configuration => configuration
             .UseSimpleAssemblyNameTypeSerializer()
             .UseRecommendedSerializerSettings()
-            .UseSQLiteStorage(nameOrConnectionString: SqlLiteDbContext.DbPath));
+            .UseSQLiteStorage());
         
         services.AddHangfireServer();
 

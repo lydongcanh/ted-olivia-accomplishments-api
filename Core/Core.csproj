@@ -18,14 +18,4 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.5" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Infrastructure\Database\Entities\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="bin\Release\net8.0\Data\sqlite.db">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
 </Project>
