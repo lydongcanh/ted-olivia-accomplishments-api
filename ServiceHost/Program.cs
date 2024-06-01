@@ -1,5 +1,6 @@
 using Hangfire;
 using Microsoft.OpenApi.Models;
+using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Hangfire;
 using TedOliviaAccomplishmentsApi.ServiceHost.Services;
 
@@ -16,6 +17,7 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 
 // Add services to the container.
+builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddGrpc().AddJsonTranscoding();
 builder.Services.AddGrpcSwagger();
 builder.Services.AddSwaggerGen(c =>
@@ -28,7 +30,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddHangFire();
-
 builder.Services.AddControllers();
 
 var app = builder.Build();
