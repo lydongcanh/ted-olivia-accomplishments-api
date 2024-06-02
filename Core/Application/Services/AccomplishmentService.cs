@@ -23,7 +23,7 @@ public class AccomplishmentService : IAccomplishmentService
             Name = request.Name,
             Note = request.Note,
             Type = request.Type,
-            Owner = Enum.Parse<Domain.Enums.Owner>(request.Owner.ToString()),
+            Owner = (Domain.Enums.Owner)request.Owner,
             IsDone = request.IsDone
         };
         
@@ -38,7 +38,7 @@ public class AccomplishmentService : IAccomplishmentService
             Name = accomplishment.Name,
             Note = accomplishment.Note,
             Type = accomplishment.Type,
-            Owner = Enum.Parse<Owner>(accomplishment.Owner.ToString()),
+            Owner = (Owner)accomplishment.Owner,
             IsDone = accomplishment.IsDone
         };
     }

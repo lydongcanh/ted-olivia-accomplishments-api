@@ -10,7 +10,7 @@ public class AccomplishmentConfig : BaseEntityConfig<Accomplishment>
         base.Configure(builder);
 
         builder.Property(e => e.Name).IsRequired();
-        builder.Property(e => e.Owner).IsRequired();
+        builder.Property(e => e.Owner).HasConversion<string>().IsRequired();
         builder.Property(e => e.Type).IsRequired();
     }
 }

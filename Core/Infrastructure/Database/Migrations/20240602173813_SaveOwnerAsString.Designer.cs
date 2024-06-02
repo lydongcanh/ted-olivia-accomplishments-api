@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
@@ -11,9 +12,11 @@ using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database.Migrations
 {
     [DbContext(typeof(AccomplishmentsDbContext))]
-    partial class AccomplishmentsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240602173813_SaveOwnerAsString")]
+    partial class SaveOwnerAsString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
