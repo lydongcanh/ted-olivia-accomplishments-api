@@ -1,7 +1,10 @@
 using Hangfire;
 using Microsoft.OpenApi.Models;
+using TedOliviaAccomplishmentsApi.Core.Application.Services;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Hangfire;
+using ApplicationAccomplishmentService = TedOliviaAccomplishmentsApi.Core.Application.Services.AccomplishmentService;
+using GrpcAccomplishmentService = TedOliviaAccomplishmentsApi.ServiceHost.Services.AccomplishmentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +34,8 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddHangFire();
 builder.Services.AddControllers();
 
+builder.Services.AddScoped<IAccomplishmentService, ApplicationAccomplishmentService>();
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -52,7 +57,8 @@ else
 }
 
 app.UseRouting();
-//app.MapGrpcService<GreeterService>();
+app.MapGrpcService<GrpcAccomplishmentService>();
+
 app.MapControllers();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
