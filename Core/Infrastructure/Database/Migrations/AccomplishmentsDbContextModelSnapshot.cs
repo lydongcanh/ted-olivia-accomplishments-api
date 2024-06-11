@@ -72,6 +72,10 @@ namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database.Migrations
                         .HasColumnType("text")
                         .HasColumnName("id");
 
+                    b.Property<TimeSpan>("ActiveDuration")
+                        .HasColumnType("interval")
+                        .HasColumnName("active_duration");
+
                     b.Property<DateTimeOffset>("CreatedDate")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_date");
@@ -79,10 +83,6 @@ namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean")
                         .HasColumnName("is_active");
-
-                    b.Property<DateTimeOffset>("LastActiveTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("last_active_time");
 
                     b.Property<DateTimeOffset>("ModifiedDate")
                         .HasColumnType("timestamp with time zone")
@@ -104,9 +104,9 @@ namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database.Migrations
                         .HasColumnName("type");
 
                     b.HasKey("Id")
-                        .HasName("pk_productivity_log");
+                        .HasName("pk_productivity_logs");
 
-                    b.ToTable("productivity_log", (string)null);
+                    b.ToTable("productivity_logs", (string)null);
                 });
 #pragma warning restore 612, 618
         }

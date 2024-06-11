@@ -2,24 +2,23 @@ syntax = "proto3";
 
 option csharp_namespace = "TedOliviaAccomplishmentsApi.Protobuf";
 
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "enums.proto";
 
-message CreateAccomplishmentRequest {
-  string name = 1;
+message PingProductivityLogRequest {
+  string type = 1;
   string note = 2;
-  string type = 3;
-  Owner owner = 4;
-  bool is_done = 5;
+  Owner owner = 3;
 }
 
-message AccomplishmentResponse {
+message ProductivityLogResponse {
   string id = 1;
   google.protobuf.Timestamp created_date = 2;
   google.protobuf.Timestamp modified_date = 3;
-  string name = 4;
+  string type = 4;
   string note = 5;
-  string type = 6;
-  Owner owner = 7;
-  bool is_done = 8;
+  Owner owner = 6;
+  bool is_active = 7;
+  google.protobuf.Duration active_duration = 8;
 }

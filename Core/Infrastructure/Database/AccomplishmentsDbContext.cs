@@ -10,6 +10,7 @@ namespace TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 public class AccomplishmentsDbContext : DbContext
 {
     public DbSet<Accomplishment> Accomplishments { get; set; }
+    public DbSet<ProductivityLog> ProductivityLogs { get; set; }
 
     public AccomplishmentsDbContext(DbContextOptions<AccomplishmentsDbContext> dbContextOptions) : base(dbContextOptions)
     {

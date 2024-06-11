@@ -4,11 +4,19 @@ option csharp_namespace = "TedOliviaAccomplishmentsApi.Protobuf";
 
 import "google/api/annotations.proto";
 import "accomplishment.proto";
+import "productivity_log.proto";
+import "enums.proto";
 
 service AccomplishmentService {
   rpc CreateAccomplishment (CreateAccomplishmentRequest) returns (AccomplishmentResponse) {
     option (google.api.http) = {
       post: "/api/v1/accomplishments"
+    };
+  }
+  
+  rpc PingProductivityLog (PingProductivityLogRequest) returns (ProductivityLogResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/productivity-logs/ping"
     };
   }
 }

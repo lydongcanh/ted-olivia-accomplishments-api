@@ -35,6 +35,7 @@ builder.Services.AddHangFire();
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IAccomplishmentService, ApplicationAccomplishmentService>();
+builder.Services.AddScoped<IProductivityLogService, ProductivityLogService>();
 
 var app = builder.Build();
 

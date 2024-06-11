@@ -12,6 +12,6 @@ public class ProductivityLogConfig : BaseEntityConfig<ProductivityLog>
         builder.Property(pl => pl.Note).IsRequired();
         builder.Property(pl => pl.Type).IsRequired();
         builder.Property(pl => pl.Owner).HasConversion<string>().IsRequired();
-        builder.Property(pl => pl.LastActiveTime).IsRequired();
+        builder.Property(pl => pl.ActiveDuration).IsRequired();
     }
 }

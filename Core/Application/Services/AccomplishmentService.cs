@@ -2,7 +2,6 @@ using Google.Protobuf.WellKnownTypes;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database;
 using TedOliviaAccomplishmentsApi.Core.Infrastructure.Database.Entities;
 using TedOliviaAccomplishmentsApi.Protobuf;
-using Enum = System.Enum;
 
 namespace TedOliviaAccomplishmentsApi.Core.Application.Services;
 
