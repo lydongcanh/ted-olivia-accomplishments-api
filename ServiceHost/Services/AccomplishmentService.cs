@@ -18,7 +18,7 @@ public class AccomplishmentService : Protobuf.AccomplishmentService.Accomplishme
     // TODO: Cancellation token
     public override async Task<AccomplishmentResponse> CreateAccomplishment(CreateAccomplishmentRequest request, ServerCallContext context)
     {
-        return await _accomplishmentService.CreateAccomplishmentAsync(request);
+        return await _accomplishmentService.CreateAccomplishmentAsync(request, context.CancellationToken);
     }
 
     public override async Task<ProductivityLogResponse> PingProductivityLog(PingProductivityLogRequest request, ServerCallContext context)

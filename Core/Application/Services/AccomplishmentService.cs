@@ -15,7 +15,7 @@ public class AccomplishmentService : IAccomplishmentService
     }
 
     // TODO: Auto mapping
-    public async Task<AccomplishmentResponse> CreateAccomplishmentAsync(CreateAccomplishmentRequest request)
+    public async Task<AccomplishmentResponse> CreateAccomplishmentAsync(CreateAccomplishmentRequest request, CancellationToken cancellationToken)
     {
         var accomplishment = new Accomplishment
         {
@@ -27,7 +27,7 @@ public class AccomplishmentService : IAccomplishmentService
         };
         
         _dbContext.Add(accomplishment);
-        await _dbContext.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync(cancellationToken);
 
         return new AccomplishmentResponse
         {
