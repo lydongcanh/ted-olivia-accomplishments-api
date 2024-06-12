@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Hangfire;
 using Microsoft.OpenApi.Models;
 using TedOliviaAccomplishmentsApi.Core.Application.Services;
@@ -32,7 +34,8 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddHangFire();
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseUpper)));
 
 builder.Services.AddScoped<IAccomplishmentService, ApplicationAccomplishmentService>();
 builder.Services.AddScoped<IProductivityLogService, ProductivityLogService>();
